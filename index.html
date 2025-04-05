@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="meu-form">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" /><br /><br />
+      <label for="email">email</label>
+      <input type="email" id="email" name="email" />
+      <input type="submit" />
+    </form>
+    <script>
+      document
+        .getElementById("meu-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = {
+            nome: this.nome.value,
+            email: this.email.value,
+            // mensagem: this.mensagem.value,
+          };
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbx2hUJIB0ujISlVvqacztqfiz0EzF6zV3BKWR7u3Es/dev",
+            {
+              method: "POST",
+              body: JSON.stringify(formData),
+              headers: { "Content-Type": "application/json" },
+            }
+          )
+            .then((response) => alert("Enviado com sucesso!"))
+            .catch((error) => alert("Erro ao enviar"));
+        });
+    </script>
+  </body>
+</html>
