@@ -1,41 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Formulário de Contato</title>
   </head>
   <body>
-    <form id="meu-form">
-      <label for="nome">Nome</label>
-      <input type="text" name="nome" id="nome" /><br /><br />
-      <label for="email">email</label>
-      <input type="email" id="email" name="email" />
-      <input type="submit" />
+    <h2>Formulário de Contato</h2>
+    <form id="contactForm">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" required></textarea><br /><br />
+
+      <button type="submit">Enviar</button>
     </form>
-    <script>
-      document
-        .getElementById("meu-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
 
-          const formData = {
-            nome: this.nome.value,
-            email: this.email.value,
-            // mensagem: this.mensagem.value,
-          };
-
-          fetch(
-            "https://script.google.com/macros/s/AKfycbwFoNBsjjheKi_5UJYMixj-y1JXhoaaQnlEKAOUauJMrIQFeREXD0DJa2vCkXYzmcGw/exec",
-            {
-              method: "POST",
-              body: JSON.stringify(formData),
-              headers: { "Content-Type": "application/json" },
-            }
-          )
-            .then((response) => alert("Enviado com sucesso!"))
-            .catch((error) => alert("Erro ao enviar"));
-        });
-    </script>
+    <script src="form.js"></script>
   </body>
 </html>
