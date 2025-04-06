@@ -12,7 +12,7 @@ document
     };
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbyRKG29DMoeCWFHKaBxN7S7GLq5IObxlbitfvJg3QRoOaLq0IjW7xXbOkxCN0M72vpg/exec"; // Substitua pela URL do seu Web App
+      "https://script.google.com/macros/s/AKfycbx0Nl2We1iNJW_03jrgNJvQU03ajZA3jgJtQ-24iF0k3gH_aH5SgoIOgEHn7V0STrGp/exec"; // Substitua pela URL do seu Web App
 
     fetch(scriptURL, {
       method: "POST",
